@@ -1,0 +1,7 @@
+language: generic
+matrix:
+    include:
+        - os: linux
+          script: ./build-linux-x86_64.sh
+        - os: osx
+          script: ./build-mac.sh
