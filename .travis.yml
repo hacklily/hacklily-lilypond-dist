@@ -4,16 +4,22 @@ matrix:
   - os: linux
     script: "./build-linux-x86_64.sh"
     deploy:
+      provider: releases
+      api_key:
+        secure: Wn/SaXVXo7IjjDtKdtvBVRzm30ek70+ABd7OUaHbo9kRwXXGnWlMvMzWyzC2LwFlJgrUWU/GJ45dfm2oKDGsd7sK52oR2abH7K0u7w1BrANxwcp940YT947hol8Z9XZ9NPizLZF83GNMijXntQkzy2ybEU3pgYiWnW7jvW8Nv1igyBoONzUD+NgE6uyROTr5Rs0Sf11+JuiXsyQWnMc+flxCnvh/dDxkIzV4hQAy4PmHHTzCvagH6VukWYi7zM8nPjhGlzktTDqq4JjONKSEHYb0vTTfoj6HZJzMR9/nJ63VOa+SKjzo8n7wZ55wXE8qDIfBJmfwFcdEqiPls38uvUeHl0nzHW2PyYron8xJ1Hee06qi4+LFeuHI3YL1O0zioY2JlJmaiXNqz+vOG41Nh0UV7kBb30zLzxmpAXIaqhbYU3W0XRd6uQhNpia+mEUlaW7szJ9hJWzQK/vh/v2Wf7fJRWmzWXBN8EXakg4ozZHZWilHbgme1GgC6g2DVHflmm1POqRjxT0tMSnT+YTEj2xLhPah+Q9ARDF/CVmrFnasRx7X288c5Dlv6px85vWk3oGzGY6ndaPdcKFTfQg42wUA7jNXfxK74yrQtAegUTXRx56zNpVjw2HVVgNFWIryRKbk3Ri7TYr/8NJ1QMmIXTcOw4mMbGtT1GlOBkTi7Ik=
+      skip_cleanup: true
       file: "./dist/hacklily-lilypond-dist-linux-x86_64.tar.gz"
+      on:
+        tags: true
+        repo: "hacklily/hacklily-lilypond-dist"
   - os: osx
     script: "./build-mac.sh"
     deploy:
+      provider: releases
+      api_key:
+        secure: Wn/SaXVXo7IjjDtKdtvBVRzm30ek70+ABd7OUaHbo9kRwXXGnWlMvMzWyzC2LwFlJgrUWU/GJ45dfm2oKDGsd7sK52oR2abH7K0u7w1BrANxwcp940YT947hol8Z9XZ9NPizLZF83GNMijXntQkzy2ybEU3pgYiWnW7jvW8Nv1igyBoONzUD+NgE6uyROTr5Rs0Sf11+JuiXsyQWnMc+flxCnvh/dDxkIzV4hQAy4PmHHTzCvagH6VukWYi7zM8nPjhGlzktTDqq4JjONKSEHYb0vTTfoj6HZJzMR9/nJ63VOa+SKjzo8n7wZ55wXE8qDIfBJmfwFcdEqiPls38uvUeHl0nzHW2PyYron8xJ1Hee06qi4+LFeuHI3YL1O0zioY2JlJmaiXNqz+vOG41Nh0UV7kBb30zLzxmpAXIaqhbYU3W0XRd6uQhNpia+mEUlaW7szJ9hJWzQK/vh/v2Wf7fJRWmzWXBN8EXakg4ozZHZWilHbgme1GgC6g2DVHflmm1POqRjxT0tMSnT+YTEj2xLhPah+Q9ARDF/CVmrFnasRx7X288c5Dlv6px85vWk3oGzGY6ndaPdcKFTfQg42wUA7jNXfxK74yrQtAegUTXRx56zNpVjw2HVVgNFWIryRKbk3Ri7TYr/8NJ1QMmIXTcOw4mMbGtT1GlOBkTi7Ik=
+      skip_cleanup: true
       file: "./dist/hacklily-lilypond-dist-osx.tar.gz"
-deploy:
-  provider: releases
-  api_key:
-    secure: Wn/SaXVXo7IjjDtKdtvBVRzm30ek70+ABd7OUaHbo9kRwXXGnWlMvMzWyzC2LwFlJgrUWU/GJ45dfm2oKDGsd7sK52oR2abH7K0u7w1BrANxwcp940YT947hol8Z9XZ9NPizLZF83GNMijXntQkzy2ybEU3pgYiWnW7jvW8Nv1igyBoONzUD+NgE6uyROTr5Rs0Sf11+JuiXsyQWnMc+flxCnvh/dDxkIzV4hQAy4PmHHTzCvagH6VukWYi7zM8nPjhGlzktTDqq4JjONKSEHYb0vTTfoj6HZJzMR9/nJ63VOa+SKjzo8n7wZ55wXE8qDIfBJmfwFcdEqiPls38uvUeHl0nzHW2PyYron8xJ1Hee06qi4+LFeuHI3YL1O0zioY2JlJmaiXNqz+vOG41Nh0UV7kBb30zLzxmpAXIaqhbYU3W0XRd6uQhNpia+mEUlaW7szJ9hJWzQK/vh/v2Wf7fJRWmzWXBN8EXakg4ozZHZWilHbgme1GgC6g2DVHflmm1POqRjxT0tMSnT+YTEj2xLhPah+Q9ARDF/CVmrFnasRx7X288c5Dlv6px85vWk3oGzGY6ndaPdcKFTfQg42wUA7jNXfxK74yrQtAegUTXRx56zNpVjw2HVVgNFWIryRKbk3Ri7TYr/8NJ1QMmIXTcOw4mMbGtT1GlOBkTi7Ik=
-  skip_cleanup: true
-  on:
-    repo: hacklily/hacklily-lilypond-dist
-    tags: true
+      on:
+        tags: true
+        repo: "hacklily/hacklily-lilypond-dist"
