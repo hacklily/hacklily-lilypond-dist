@@ -39,7 +39,7 @@ popd
 cd .. # back to root
 echo "[4/4]: bundling and cleaning up"
 mkdir -p dist
-cp ./resources/start.ly ./resources/start.sh ./hacklily-lilypond-dist-linux-x86_64/
+cp ./resources/start.ly ./resources/start.sh ./resources/stop.sh ./resources/lyp ./hacklily-lilypond-dist-linux-x86_64/
 tar -cf dist/hacklily-lilypond-dist-linux-x86_64.tar ./hacklily-lilypond-dist-linux-x86_64
 gzip -f dist/hacklily-lilypond-dist-linux-x86_64.tar
 rm -fr hacklily-lilypond-dist-linux-x86_64 tmp

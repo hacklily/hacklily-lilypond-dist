@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P) # https://stackoverflow.com/a/17744637
+source $DIR/.profile
+lyp use 2.18.2
+
+"$DIR/.lyp/bin/lyp" "$@"
