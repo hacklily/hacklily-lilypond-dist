@@ -1,0 +1,4 @@
+/dist/
+/hacklily-lilypond-dist-*
+/tmp/
+*.sw*
