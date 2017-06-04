@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
+OLD_DIR=$(pwd)
 
 DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P) # https://stackoverflow.com/a/17744637
 source $DIR/.profile
 lyp use 2.18.2
 
+cd $OLD_DIR
 "$DIR/.lyp/bin/lyp" "$@"
